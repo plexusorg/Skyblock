@@ -1,7 +1,7 @@
 package dev.plex.skyblock;
 
-import dev.plex.hook.SlimeWorldHook;
-import dev.plex.listener.PlayerListener;
+import dev.plex.skyblock.hook.SlimeWorldHook;
+import dev.plex.skyblock.listener.PlayerListener;
 import lombok.Getter;
 import lombok.experimental.Accessors;
 import org.bukkit.plugin.java.JavaPlugin;

@@ -1,4 +1,4 @@
-package dev.plex.hook;
+package dev.plex.skyblock.hook;
 
 import com.google.common.collect.Sets;
 import com.infernalsuite.aswm.api.SlimePlugin;
@@ -8,7 +8,7 @@ import com.infernalsuite.aswm.api.world.SlimeWorld;
 import com.infernalsuite.aswm.api.world.properties.SlimeProperties;
 import com.infernalsuite.aswm.api.world.properties.SlimePropertyMap;
 import dev.plex.skyblock.Skyblock;
-import dev.plex.util.ComponentUtil;
+import dev.plex.skyblock.util.ComponentUtil;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.Bukkit;
@@ -17,7 +17,6 @@ import org.bukkit.Material;
 import org.bukkit.World;
 
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.Set;
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicInteger;

@@ -1,4 +1,4 @@
-package dev.plex.listener;
+package dev.plex.skyblock.listener;
 
 import dev.plex.skyblock.Skyblock;
 import org.bukkit.Bukkit;

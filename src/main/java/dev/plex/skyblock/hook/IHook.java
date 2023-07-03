@@ -1,7 +1,6 @@
-package dev.plex.hook;
+package dev.plex.skyblock.hook;
 
 import dev.plex.skyblock.Skyblock;
-import org.bukkit.plugin.java.JavaPlugin;
 
 /**
  * @author Taah
