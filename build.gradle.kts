@@ -1,6 +1,7 @@
 plugins {
     `java-library`
     id("io.papermc.paperweight.userdev") version "1.5.5"
+    id("net.minecrell.plugin-yml.bukkit") version "0.6.0"
 }
 
 group = "dev.plex"
@@ -21,12 +22,17 @@ repositories {
     maven {
         url = uri("https://repo.rapture.pw/repository/maven-releases/")
     }
+    maven {
+        url = uri("https://oss.sonatype.org/content/repositories/snapshots")
+    }
 }
 
 dependencies {
     paperweight.paperDevBundle("1.20.1-R0.1-SNAPSHOT")
     compileOnly("com.infernalsuite.aswm:api:1.20-R0.1-SNAPSHOT")
     compileOnly("org.projectlombok:lombok:1.18.28")
+
+    library("cloud.commandframework", "cloud-paper", "1.8.3")
 
     annotationProcessor("org.projectlombok:lombok:1.18.28")
 }
@@ -49,16 +55,6 @@ tasks {
     }
     processResources {
         filteringCharset = Charsets.UTF_8.name() // We want UTF-8 for everything
-        val props = mapOf(
-            "name" to project.name,
-            "version" to project.version,
-            "description" to project.description,
-            "apiVersion" to "1.20"
-        )
-        inputs.properties(props)
-        filesMatching("plugin.yml") {
-            expand(props)
-        }
     }
 
     /*
@@ -68,4 +64,11 @@ tasks {
       outputJar.set(layout.buildDirectory.file("libs/PaperweightTestPlugin-${project.version}.jar"))
     }
      */
+}
+
+bukkit {
+    main = "dev.plex.skyblock.Skyblock"
+    name = "Plex-Skyblock"
+    version = project.version.toString()
+    apiVersion = "1.20"
 }

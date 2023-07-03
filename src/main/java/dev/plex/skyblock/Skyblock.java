@@ -1,5 +1,6 @@
 package dev.plex.skyblock;
 
+import dev.plex.skyblock.command.CommandHandler;
 import dev.plex.skyblock.hook.SlimeWorldHook;
 import dev.plex.skyblock.listener.PlayerListener;
 import lombok.Getter;
@@ -15,6 +16,7 @@ public final class Skyblock extends JavaPlugin {
     @Getter
     private final SlimeWorldHook slimeWorldHook = new SlimeWorldHook();
 
+
     @Override
     public void onLoad() {
         plugin = this;
@@ -22,6 +24,12 @@ public final class Skyblock extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        try {
+            new CommandHandler().setup();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
         getServer().getPluginManager().registerEvents(new PlayerListener(), this);
         slimeWorldHook.onEnable(this);
     }
