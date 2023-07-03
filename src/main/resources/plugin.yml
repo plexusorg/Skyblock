@@ -1,0 +1,4 @@
+name: "${name}"
+version: "${version}"
+main: dev.plex.skyblock.Skyblock
+api-version: "1.20"
